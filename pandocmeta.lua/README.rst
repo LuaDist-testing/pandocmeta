@@ -5,62 +5,38 @@ pandocmeta
 ``pandocmeta`` is a Lua_ package that provides a function that converts
 Pandoc_ metadata types to a, possibly multi-dimensional, table.
 
-It supports the following types:
+Suppose, for example, your document has `this YAML header
+<https://pandoc.org/MANUAL.html#extension-yaml_metadata_block>`_::
 
-* ``MetaBlock``
-* ``MetaInlines``
-* ``MetaMap``
-* ``MetaList``
+    ---
+    title: The document title
+    author:
+    - name: Author One
+      affiliation: University of Somewhere
+    - name: Author Two
+      affiliation: University of Nowhere
+    ...
+
+``pandocmeta`` allows you to access the affiliation of the second
+author by saying::
+
+    require 'pandocmeta'
+
+    function Pandoc (doc)
+        meta = pandocmeta.totable(doc.meta)
+        affiliation = meta['author'][2]['affiliation']
+    end
 
 
 Caveats
 =======
 
-* Does *not* support ``MetaString`` and ``MetaBool``
-  (but that doesn't appear to be necessary).
-
-* Does *not* convert numbers to integer
-  (there's no way to be sure that this is what you want).
+``pandocmeta`` does *not* convert numbers to integer
+(there's no way to be sure that this is what you want).
 
 
 Example
 =======
-
-The following code is a simple Lua filter for Pandoc_::
-
-    require 'pandocmeta'
-
-    function main (doc)
-        local meta = pandocmeta.totable(doc.meta)
-        print(meta['author'][2])
-    end
-
-    return {{Pandoc=main}}
-
-It prints the second author of a paper.
-(Or ``nil`` if a paper doesn't have a second author.)
-
-Suppose, we save this code as ``printsecondauthor.lua`` and
-that we another file, called ``twoauthors.md``, that contains
-the following text::
-
-    ---
-    title: An example.
-    author:
-        - Odie
-        - Garfield
-    ...
-
-    It's raining dogs and cats.
-
-
-Then, if we run::
-
-    pandoc --lua-filter ./printsecondauthor.lua -o twoauthors.html twoauthors.md
-
-This will print::
-
-    Garfield
 
 See `pandoc-refheadstyle.lua
 <https://github.com/odkr/pandoc-refheadstyle.lua>`_ for a real-word
@@ -70,7 +46,9 @@ example.
 Documentation
 =============
 
-Use the source.
+See the `package documentation <doc/index.html>`_.
+
+And use the source.
 
 
 Installing ``pandocmeta``
@@ -87,12 +65,12 @@ If you are using LuaRocks_, simply say::
 Alternatively:
 
 1. Download the source for the `current version
-   <https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.1-2>`_.
+   <https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.2-0>`_.
 2. Unpack it.
 
 On most modern Unix systems, you can simply say::
 
-    curl https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.1-2 | tar -xz
+    curl https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.2-0 | tar -xz
 
 
 Contact
