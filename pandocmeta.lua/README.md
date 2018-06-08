@@ -62,12 +62,12 @@ If you are using [LuaRocks](https://luarocks.org/), simply say:
 Alternatively:
 
 1. Download the source for the [current
-   version](https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.3-0).
+   version](https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.3-1).
 2. Unpack it.
 
 On most modern Unix systems, you can simply say:
 
-    curl https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.3-0 | tar -xz
+    curl https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.3-1 | tar -xz
 
 
 Contact

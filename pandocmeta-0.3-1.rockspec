@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "pandocmeta"
-version = "0.3-0"
+version = "0.3-1"
 -- LuaDist source
 source = {
-  tag = "0.3-0",
+  tag = "0.3-1",
   url = "git://github.com/LuaDist-testing/pandocmeta.git"
 }
 -- Original source
 -- source = {
 --    url = "git://github.com/odkr/pandocmeta.lua",
---    tag = "v0.3-0"
+--    tag = "v0.3-1"
 -- }
 description = {
    summary = "Convert Pandoc metadata types to a table.",
