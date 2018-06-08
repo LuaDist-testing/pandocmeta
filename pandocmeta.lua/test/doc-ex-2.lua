@@ -23,13 +23,13 @@
 
 local package = package
 local path_sep = package.config:sub(1, 1)
-local script_dir = string.match(PANDOC_SCRIPT_FILE, '(.-)[\\/][^\\/]-$')
+local script_dir = string.match(PANDOC_SCRIPT_FILE, '(.-)[\\/][^\\/]-$') or '.'
 local module_dir = table.concat({script_dir, '..', 'src', '?.lua'}, path_sep)
 package.path = package.path .. ';' .. module_dir
 
 require 'pandocmeta'
 
-function main (doc)
+function Pandoc (doc)
     meta = pandocmeta.totable(doc.meta)
     assert(meta['title'] == 'The document title')
     assert(meta['author'][1]['name'] == 'Author One')
@@ -37,5 +37,3 @@ function main (doc)
     assert(meta['author'][2]['name'] == 'Author Two')
     assert(meta['author'][2]['affiliation'] == 'University of Nowhere')
 end
-
-return {{Pandoc = main}}
