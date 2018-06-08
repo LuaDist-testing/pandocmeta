@@ -1,12 +1,10 @@
-==========
 pandocmeta
 ==========
 
-``pandocmeta`` is a Lua_ package that provides a function that converts
-Pandoc_ metadata types to a, possibly multi-dimensional, table.
+`pandocmeta` is a [Lua](https://lua.org/) package that provides a function
+that converts [Pandoc](https://pandoc.org/) metadata types to a, possibly multi-dimensional, table.
 
-Suppose, for example, your document has `this YAML header
-<https://pandoc.org/MANUAL.html#extension-yaml_metadata_block>`_::
+Suppose, for example, your document has [this YAML header](https://pandoc.org/MANUAL.html#extension-yaml_metadata_block>):
 
     ---
     title: The document title
@@ -17,8 +15,8 @@ Suppose, for example, your document has `this YAML header
       affiliation: University of Nowhere
     ...
 
-``pandocmeta`` allows you to access the affiliation of the second
-author by saying::
+`pandocmeta` allows you to access the affiliation of the second
+author by saying:
 
     require 'pandocmeta'
 
@@ -29,59 +27,58 @@ author by saying::
 
 
 Caveats
-=======
+-------
 
-``pandocmeta`` does *not* convert numbers to integer
+`pandocmeta` does *not* convert numbers to integer
 (there's no way to be sure that this is what you want).
 
 
 Example
-=======
+-------
 
-See `pandoc-refheadstyle.lua
-<https://github.com/odkr/pandoc-refheadstyle.lua>`_ for a real-word
-example.
+See [pandoc-refheadstyle.lua](https://github.com/odkr/pandoc-refheadstyle.lua)
+for a real-word example.
 
 
 Documentation
-=============
+-------------
 
-See the `package documentation <doc/index.html>`_.
+See the [package documentation](https://odkr.github.io/pandocmeta.lua/).
 
 And use the source.
 
 
-Installing ``pandocmeta``
-=========================
+Installing `pandocmeta`
+-----------------------
 
-You use ``pandocmeta`` **at your own risk**. You have been warned.
+You use `pandocmeta` **at your own risk**. You have been warned.
 
-You need Pandoc_ 2.0 or newer.
+You need Pandoc 2.0 or newer.
 
-If you are using LuaRocks_, simply say::
+If you are using [LuaRocks](https://luarocks.org/), simply say:
 
     luarocks install pandocmeta
 
 Alternatively:
 
-1. Download the source for the `current version
-   <https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.2-0>`_.
+1. Download the source for the [current
+   version](https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.3-0).
 2. Unpack it.
 
-On most modern Unix systems, you can simply say::
+On most modern Unix systems, you can simply say:
 
-    curl https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.2-0 | tar -xz
+    curl https://codeload.github.com/odkr/pandocmeta/tar.gz/v0.3-0 | tar -xz
 
 
 Contact
-=======
+-------
 
-If there's something wrong with ``pandocmeta``, `open an issue
-<https://github.com/odkr/pandocmeta/issues>`_.
+If there's something wrong with `pandocmeta`, [open an
+issue](https://github.com/odkr/pandocmeta/issues).
 
 
 License
-=======
+-------
 
 Copyright 2018 Odin Kroeger
 
@@ -105,17 +102,10 @@ SOFTWARE.
 
 
 Further Information
-===================
+-------------------
 
 GitHub:
 <https://github.com/odkr/pandocmeta.lua>
 
 LuaRocks:
 <http://luarocks.org/modules/odkr/pandocmeta>
-
-
-.. _Lua: https://lua.org/
-
-.. _LuaRocks: https://luarocks.org/
-
-.. _Pandoc: https://www.pandoc.org/
